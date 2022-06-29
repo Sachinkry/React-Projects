@@ -1,13 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital@1&family=Bellefair&family=Inter:wght@400&family=Merriweather:ital,wght@1,300&family=Montserrat&family=Poppins:wght@200&family=Sacramento&family=Ubuntu&display=swap');
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Inter', sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.main-container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #F5F7FB;
+}
+
+.start{
+  text-align: center;
+  padding-bottom: 40px;
+}
+
+.start-header{
+  font-size: 2.5rem;
+  color: #293264;
+  font-weight: 700;
+  padding-bottom: 0;
+  letter-spacing: 1px;
+}
+.quiz-info{
+  font-size: .9rem;
+  color: #293264;
+  margin: -18px 0 29px;
+}
+.start-btn {
+  border: 2px solid #4D5B9E;
+  font-size: 0.8rem;
+  color: #F5F7FB;
+  background-color: #4D5B9E;
+  border-radius: 15px;
+  padding: 14px 35px;
+}
+
+/* quiz-styling */
+
+.quiz-container {
+  height: 650px;
+  width: 550px;
+}
+
+.question{
+  color: #293264;
+  font-size: 1.3rem;
+}
+
+.options {
+
+}
+
+.items {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 5px 0;
+  padding-left: 0;
+}
+
+.item {
+  border: 1px solid #4D5B9E;
+  margin: -7px 20px 10px 0;
+  border-radius: 8px;
+  font-size: .8rem;
+  padding: 4px 19px;
+  color: #293264;
+  /* background-color: #D6DBF5; */
+
+}
+
+.line {
+  color: #c7cdf3;
+}
+
+.check-ans-btn {
+  border: 2px solid #4D5B9E;
+  font-size: 0.8rem;
+  color: #F5F7FB;
+  background-color: #4D5B9E;
+  border-radius: 15px;
+  margin: 15px;
+  padding: 14px 20px;
+  position: relative;
+  left: 190px;
+  bottom: 10px;
 }
