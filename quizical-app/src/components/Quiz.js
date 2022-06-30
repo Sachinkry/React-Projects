@@ -1,18 +1,19 @@
 import React from "react"
+// import { quizData } from "../data"
 
-export default function Quiz() {
+export default function Quiz(props) {
+    // <div className="options">
+    //     <ul className="items">
+    //         <li className="item">{quiz.options[0]}</li>
+    //         <li className="item">{quiz.options[1]}</li>
+    //         <li className="item">{quiz.options[2]}</li>
+    //         <li className="item">{quiz.options[3]}</li>
+    //     </ul>
+    // </div>
+    // <hr className="line" />
     return (
         <div >
-            <h3 className="question">How would one say goodbye in Spanish?</h3>
-            <div className="options">
-                <ul className="items">
-                    <li className="item">Hola</li>
-                    <li className="item">Ni hao!</li>
-                    <li className="item">kem cho</li>
-                    <li className="item">namaste</li>
-                </ul>
-            </div>
-            <hr className="line" />
+            <h3 className="question">{props.question}</h3>
         </div>
     )
 }

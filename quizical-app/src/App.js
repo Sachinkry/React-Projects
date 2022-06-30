@@ -1,36 +1,39 @@
 import React from "react"
-// import Start from "./components/Start";
+import Start from "./components/Start";
 import Quiz from "./components/Quiz";
+// import { quizData } from "./data"
 
 function App() {
-  const [quizData, setQuizData] = React.useState(callApi())
-  // <Start />
-  function callApi() {
-    fetch("https://opentdb.com/api.php?amount=5&category=21&difficulty=easy&type=multiple")
+  const [display, setDisplay] = React.useState(false)
+  const [quizData, setQuizData] = React.useState([])
+
+  React.useEffect(() => {
+    fetch("https://opentdb.com/api.php?amount=5&difficulty=easy&type=multiple")
       .then(res => res.json())
-      .then(data => setQuizData(data.results))
+      .then(data => {
+        setQuizData(data.results)
+        console.log(data.results)
+      })
+  }, [])
+
+  // const quizEl = quizData.map(quiz => console.log(typeof quiz.question))
+
+  function loadQuiz() {
+    setDisplay(prevState => !prevState)
   }
-  // callApi()
 
-  // console.log(quizData)
-  const quizQuestions = quizData.map(data => {
-    return (
-      <p>{data.question}</p>
-    )
-  })
-
-  // <div className="quiz-container">
-  //   <Quiz />
-  //   <Quiz />
-  //   <Quiz />
-  //   <Quiz />
-  //   <Quiz />
-  //   <button className="check-ans-btn">Check Answers</button>
-  // </div>
   return (
     <div className="main-container">
-      {quizQuestions}
+      {display ?
+        <div>
+          {quizData.map(quiz => (
+            <Quiz question={quiz.question} />
+          ))}
+        </div> :
+        <Start handleClick={loadQuiz} />
+      }
     </div>
+
   );
 }
 
